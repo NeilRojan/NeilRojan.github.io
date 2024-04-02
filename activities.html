@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities | Neil's Portfolio</title>
+    <meta name="description" content="Neil's Portfolio - Showcasing my projects, skills, and professional journey.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/logo_main.png" type="image/png" >
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>  
+</head>
+<body class="dark-theme">
+    
+    <div id="sidebar" class="section">
+        <div class="sidebar-container">
+            <img src="assets/logo_main.png" alt="Logo" class="logo">
+            <h2 class="heading">Neil's Portfolio</h2>
+            <br><br>
+            <div id="hamburger" class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-link">Welcome</a>
+            <a href="aboutme.html" class="sidebar-link">About Me</a>
+            <a href="portfolio.html" class="sidebar-link">Curriculum Vitae</a>
+            <a href="services.html" class="sidebar-link">Blog</a>
+            <a href="activities.html" class="sidebar-link">Activities</a>
+            <a href="contact.html" class="sidebar-link">Contact</a>
+        </nav>
+        <div id="sidebar_animation" class="sidebar-animation">
+            <dotlottie-player 
+                src="assets/Animation - 1710919846827.json" 
+                background="transparent" 
+                speed="0.5" 
+                style="width: 200px; height: 200px;" 
+                loop 
+                autoplay>
+            </dotlottie-player>
+        </div>
+        <div id="responsivebox" class="responsivebox">
+            <br><br><br><br><br>
+        </div>
+    </div>
+    
+    <div id="main-content" class="section">
+        <div class="content-container">
+            <p>CV</p>
+        </div>
+    </div>
+    
+    <div id="right-section" class="section">
+        <div class="social-icons">
+            <div id="theme-toggle" class="theme-icon" onclick="toggleTheme()">
+                <span id="icon-bulb" style="display: block;">🌞</span> <!-- Bulb icon (Light Mode) -->
+                <span id="icon-moon" style="display: none;">🌙</span> <!-- Moon icon (Dark Mode) -->
+            </div>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div class="social-icons">
+            <a href="your_gmail_link" target="_blank" class="social-icon"><img src="assets/Gmail_icon.png" alt="Gmail"></a>
+            <br>
+            <a href="your_linkedin_profile" target="_blank" class="social-icon"><img src="assets/linkedin_icon.png" alt="LinkedIn"></a>
+            <br>
+            <a href="your_instagram_profile" target="_blank" class="social-icon"><img src="assets/instagram_icon.png" alt="Instagram"></a>
+            <br>
+            <a href="your_github_profile" target="_blank" class="social-icon"><img src="assets/github_icon.png" alt="Github"></a>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,658 @@
+
+body {
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    color: white; /* Default text color, changes with theme */
+}
+
+.section {
+    height: 100%;
+    background-color: #161716;
+}
+
+#sidebar {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#main-content {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#right-section {
+    width: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    overflow: hidden;
+    height: 100%;
+}
+
+.sidebar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.sidebar-animation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.responsivebox{
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    padding: 10% 10% 5% 10%;
+}
+
+.sidebar-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    width: auto;
+    text-align: center;
+    transition: background-color 0.2s, color 0.3s;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.sidebar-link:hover {
+    background-color: grey;
+    padding: 10px 30px;
+}
+
+.content-container {
+    background-color: #393939;
+    border-radius: 10px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 50px);
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+h1, p {
+    margin: 0;
+    padding: 10px;
+}
+
+
+.theme-icon {
+    padding-top: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    font-size: 200%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.theme-icon:hover {
+    transform: scale(1.4);
+}
+
+body.dark-theme {
+    background-color: #161716;
+}
+
+body.light-theme {
+    background-color: #fefeff;
+    color: black;
+}
+
+body.light-theme .sidebar-link {
+    color: black;
+}
+
+body.light-theme .sidebar-link:hover {
+    background-color: #f0f4f9; /* Hover color in light mode */
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.social-icon {
+    margin: 10px 0; /* Space between icons */
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icon img {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1); /* Adjust scaling effect as needed */
+}
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 30px; 
+    padding: 20px;
+}
+
+#sidebar.active {
+    transform: translateX(0%); /* Slide in */
+}
+@media screen and (max-width: 1105px) {
+    .sidebar-container h2 {
+        display: none; /* Hide the heading text */
+    }
+
+    .sidebar-container .logo {
+        display: block; /* Ensure the logo remains visible */
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+
+    #sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 15%; 
+        transition: width 0.5s ease; /* Smooth transition for retracting */
+    }
+    #sidebar.active {
+        position: fixed;
+        width: 80%; /* Adjust as needed */
+        height: 100%;
+        z-index: 3; /* Ensures it overlays the main content */
+        transition: width 0.5s ease;
+    }
+    
+    #main-content {
+        z-index: 1;
+        overflow: hidden;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #right-section {
+        z-index: 1;
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+    .sidebar-container {
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;
+        width: 100%;
+        height: 20%;
+        box-sizing: border-box;
+
+
+    }
+    .logo{
+        display: block;
+        align-self: center;
+    }
+    .sidebar-animation{
+        display: none;
+    }
+    .sidebar-nav{
+        display: none;
+        padding-top: 0%;
+    }
+    .hamburger-icon {
+        padding-top: 0;
+        padding-bottom: 0%;
+        font-size: 30px; /* Adjust size of the hamburger icon */
+        display: block;
+        align-self: center;
+    }
+    .responsivebox{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #f0f4f9; /* Translucent black background */
+    color: rgb(0, 0, 0); /* White text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Example font size, adjust as needed */
+    z-index: 9999; /* Ensures it's above everything else */
+    text-align: center; /* Centers the text horizontally */
+    padding: 20px; /* Adds padding around the text */
+}
+
+/* Style for the text container within the overlay, if needed */
+.welcome-overlay-text {
+    max-width: 600px; /* Maximum width of the text block */
+    text-align: justify; /* Justifies the text within the block */
+    margin: 0 auto; /* Centers the block horizontally */
+}
+
+/* General Styles */
+.content-container {
+    background-color: #1c1c1e; /* Dark theme background color */
+    color: #c7c7c7; /* Dark theme text color */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Shadow for depth */
+    overflow-y: auto; /* Adds scrollbar if needed */
+}
+
+.section-title, .section-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Spacing between letters */
+    margin-bottom: 16px; /* Space below the title */
+}
+
+.personal-intro, .professional-journey {
+    background-color: #29292b; /* Dark theme lighter background for sections */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Space between sections */
+    line-height: 1.6;
+    font-size: 1rem; /* Adapts font size to user's device settings */
+}
+
+/* Profile Photo Styles */
+.profile-photo-container {
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    border-radius: 50%; /* Circular photo */
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Light Theme Overrides */
+body.light-theme .content-container {
+    background-color: #ffffff; /* Light theme background color */
+    color: #333333; /* Light theme text color */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Lighter shadow */
+}
+
+body.light-theme .personal-intro, body.light-theme .professional-journey {
+    background-color: #ffffff94; /* Light theme background for sections */
+}
+
+body.light-theme .section-title, body.light-theme .section-subtitle,
+body.light-theme .personal-intro p, body.light-theme .professional-journey p {
+    color: #333333; /* Dark grey for better readability */
+}
+
+body.light-theme .profile-photo {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Light theme shadow for photo */
+}
+
+
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 20px; /* Space between this section and the next */
+}
+
+.personal-intro {
+    flex: 1;
+    margin-right: 20px; /* Space between the text and the image */
+}
+
+@media screen and (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-photo-container {
+        margin-bottom: 20px;
+    }
+
+    .personal-intro {
+        margin-right: 0;
+    }
+}
+.cv-embed {
+    margin-bottom: 20px; /* Spacing below the embed before the download button */
+}
+
+.cv-download {
+    text-align: center; /* Center the download button */
+    margin-bottom: 20px; /* Additional spacing if needed */
+}
+
+.cv-download-link {
+    display: inline-block; /* Allows for text alignment and padding */
+    padding: 10px 20px;
+    background-color: #ffffff; /* Light background for the button */
+    color: #161716; /* Dark text */
+    text-decoration: none; /* Remove underline from the link */
+    font-weight: bold; /* Make the 'Download CV' text bold */
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effects */
+}
+
+.cv-download-link:hover {
+    background-color: #4b4b4b; /* Darker background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Light Theme Overrides */
+body.light-theme .cv-download-link {
+    background-color: #4b4b4b; /* Dark background for button in light theme */
+    color: #ffffff; /* White text */
+}
+
+body.light-theme .cv-download-link:hover {
+    background-color: #6c6c6c; /* Lighter background on hover in light theme */
+    color: #ffffff; /* White text on hover */
+}
+.cv-embed {
+    border: 1px solid #ccc; /* Add a border around the PDF viewer */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+}
+.cv-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    color: #FFFFFF;
+    background-color: #16161988;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cv-container a {
+    color: #FFD700;
+}
+
+.header h1 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+
+
+.section ul, .section p {
+    margin-left: 20px;
+}
+
+/* Light theme adjustments */
+body.light-theme .cv-container {
+    background-color: #ffffff94;
+    color: #000000;
+}
+
+body.light-theme .cv-container a {
+    color: #0056b3;
+}
+
+
+/* Styling for lists to appear more engaging */
+.section ul li:before {
+    content: "";
+    margin-right: 5px;
+}
+
+/* Interests section with a bit more flair */
+.interests p:before {
+    content: " ";
+}
+
+/* Enhancing readability with good spacing */
+.cv-container {
+    line-height: 1.6;
+}
+
+.contact-info p {
+    font-style: italic;
+}
+
+.switchcolor{
+    color: #FFD700;
+}
+body.light-theme .switchcolor{
+    color: #245e9b;
+}
+#blog-container {
+    margin: 20px;
+}
+
+.blog-post {
+    background-color: #292929;
+    border: 2px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.blog-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.image-content img {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.blog-full-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    padding: 0 20px;
+    background-color: #1e1e1e;
+    color: #cccccc;
+}
+
+.blog-post.expanded .blog-full-content {
+    max-height: 1000px; /* Adjust based on your content */
+    padding: 20px;
+}
+
+/* Enhancing the look & feel */
+.blog-title, .blog-summary {
+    color: #FFFFFF;
+}
+
+/* Hover effect */
+.blog-post:hover {
+    border-color: #FFFFFF;
+    transform: scale(1.02);
+}
+body.light-theme .blog-preview {
+    background-color: #f8fbfc;
+    color: #000000;
+}
+
+body.light-theme .blog-title,body.light-theme .blog-summary {
+    color: black;
+}
+
+body.light-theme .blog-full-content{
+    background-color: white;
+    color: black;
+}
+
+.contact-container{
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    color: #FFFFFF;
+    background-color: #16161988;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+body.light-theme .contact-container {
+    background-color: #ffffff94;
+    color: #000000;
+}
+.blog-post2{
+    background-color: #292929;
+    border: 2px solid;
+    border-color: #0056b3;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.blog-post2:hover {
+    border-color: #6c1515;
+    transform: scale(1.02);
+}
+#main-content {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .welcome-container {
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .help-container {
+    background-color: #161716;
+    padding: 50px;
+    border-radius: 20px;
+  }
+  
+  .help-logo img {
+    width: 100px; /* Adjust size accordingly */
+    height: auto;
+    margin: 0 auto 30px;
+    display: block;
+  }
+  
+  .help-heading {
+    margin-bottom: 50px;
+    font-size: 2em;
+  }
+  
+  .help-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .option {
+    background-color: #1c1c1e;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .option h2 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+  }
+  
+  .option p {
+    font-size: 0.9em;
+  }
+  
+  .option:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Light theme overrides */
+  body.light-theme .help-container {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.light-theme .option {
+    background-color: #f0f4f9;
+  }
+  
+  body.light-theme .option h2,
+  body.light-theme .option p {
+    color: #000000;
+  }
+  .contactmainbox{
+    display: flex
+  }

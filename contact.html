@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Neil's Portfolio</title>
+    <meta name="description" content="Neil's Portfolio - Showcasing my projects, skills, and professional journey.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/logo_main.png" type="image/png" >
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>  
+    <style>
+        /* Container adjustments */
+        .contact-container {
+          text-align: center;
+          max-width: 800px;
+          margin: 30px auto;
+          padding: 20px;
+          background: rgba(33, 37, 41, 0.85);
+          border-radius: 10px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+      
+        body.light-theme .contact-container {
+          background: #fff;
+          color: #333;
+        }
+      
+        /* Typography */      
+        .contactpagecontent1, .contactpagecontent2 .socialconnection {
+          margin-bottom: 1.5em;
+          color: #ccc;
+          font-size: 1rem;
+        }
+      
+        body.light-theme .contactpagecontent1, body.light-theme .contactpagecontent2, body.light-theme .socialconnection {
+          color: #666;
+        }
+      
+        /* Form styling */
+        .contact-form-container {
+          background: #222;
+          border-radius: 8px;
+          width: 100%;
+        }
+      
+        body.light-theme .contact-form-container {
+          background: #f7f7f7;
+        }
+      
+        .contact-form label {
+          display: block;
+          margin: 10px 0 5px;
+          color: #ddd;
+          text-transform: uppercase;
+          font-size: 0.85em;
+          letter-spacing: 0.05em;
+        }
+      
+        body.light-theme .contact-form label {
+          color: #333;
+        }
+      
+        .contact-form input, .contact-form textarea, .contact-form button {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: none;
+          border-radius: 5px;
+        }
+      
+        .contact-form input, .contact-form textarea {
+          background: #333;
+          color: #ddd;
+        }
+      
+        .contact-form button {
+          background: #007bff;
+          color: #fff;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          transition: background 0.3s ease;
+        }
+      
+        .contact-form button:hover {
+          background: #0056b3;
+          cursor: pointer;
+        }
+      
+        body.light-theme .contact-form input, body.light-theme .contact-form textarea {
+          background: #e9ecef;
+          color: #495057;
+        }
+      
+        body.light-theme .contact-form button {
+          background: #0069d9;
+          color: #fff;
+        }
+      
+        /* Social Icons */
+        .social-links {
+          display: flex;
+          justify-content: center;
+          list-style: none;
+          padding: 0;
+        }
+      
+        .social-links li {
+          margin: 0 10px;
+        }
+        .contactpagecontent1{
+            margin: 0;
+            margin-left: 0;
+        }
+        .social-icon {
+          transition: transform 0.3s ease;
+        }
+      
+        .social-icon:hover {
+          transform: translateY(-5px);
+        }
+        .contact_animation {
+            width: 100%;
+             display: flex;
+            justify-content: center;
+            align-items: center;
+             margin-bottom: 30px;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .contact-container {
+            margin: 20px;
+          }
+        }
+        .contactpagelinks .li{
+            display: inline;
+        }
+        .social-links li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        .social-icon img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon:hover img {
+            transform: scale(1.1);
+        }
+      </style>
+      
+</head>
+<body class="dark-theme">
+    
+    <div id="sidebar" class="section">
+        <div class="sidebar-container">
+            <img src="assets/logo_main.png" alt="Logo" class="logo">
+            <h2 class="heading">Neil's Portfolio</h2>
+            <br><br>
+            <div id="hamburger" class="hamburger-icon" onclick="toggleSidebar()">&#9776;</div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-link">Home</a>
+            <a href="aboutme.html" class="sidebar-link">About Me</a>
+            <a href="portfolio.html" class="sidebar-link">Curriculum Vitae</a>
+            <a href="services.html" class="sidebar-link">Blog</a>
+            <a href="contact.html" class="sidebar-link">Contact</a>
+        </nav>
+        <div id="sidebar_animation" class="sidebar-animation">
+            <dotlottie-player 
+                src="assets/Animation - 1710919846827.json" 
+                background="transparent" 
+                speed="0.5" 
+                style="width: 200px; height: 200px;" 
+                loop 
+                autoplay>
+            </dotlottie-player>
+        </div>
+        <div id="responsivebox" class="responsivebox">
+            <br><br><br><br><br>
+        </div>
+    </div>
+    
+    <div id="main-content" class="section">
+        <div class="content-container">
+            <h1 class="section-title">Contact Page</h1>
+            <div class="contact-container">
+                     <p class="contactpagecontent1">Any questions, suggestions, or ideas? I welcome your feedback!<br><br><br> This website was an exciting challenge, created primarily using ChatGPT with minimal edits. <br>It's my submission for Cloud Computing Assignment 1 </p>
+                         <div class="contactmainbox">
+                                <div class="contact-form-container">  
+                                    <h3>Send a Message!</h3></p>                 
+                               <form action="https://formspree.io/f/xnqegwed" method="POST" class="contact-form">
+                                   <div class="form-group">
+                                       <label for="firstName">First Name</label>
+                                       <input type="text" id="firstName" name="firstName" required>
+                                   </div>
+                                   
+                                   <div class="form-group">
+                                       <label for="lastName">Last Name</label>
+                                       <input type="text" id="lastName" name="lastName" required>
+                                   </div>
+                                   
+                                   <div class="form-group">
+                                       <label for="email">Email</label>
+                                       <input type="email" id="email" name="email" required>
+                                   </div>
+                                   
+                                   <div class="form-group">
+                                       <label for="message">Message</label>
+                                       <textarea id="message" name="message" required></textarea>
+                                   </div>
+                                   
+                                   <button type="submit" class="submit-btn">Send</button>
+                               </form>
+                               </div>
+                         </div>
+                         
+                        
+                            <br>
+                            <br>
+                            <br>
+                <div class="socialconnection">
+                    <p class="contactpagecontent2">Let's Connect!</p>
+                    <ul class="social-links">
+                        <div class="contactpagelinks">
+                            <li><a href="mailto:neilrojan3@gmail.com" target="_blank" class="social-icon"><img src="assets/Gmail_icon.png" alt="Gmail"></a></li>
+                            <li><a href="your_github_profile" target="_blank" class="social-icon"><img src="assets/github_icon.png" alt="Github"></a></li>
+                            <li><a href="your_linkedin_profile" target="_blank" class="social-icon"><img src="assets/linkedin_icon.png" alt="LinkedIn"></a></li>
+                            <li><a href="your_instagram_profile" target="_blank" class="social-icon"><img src="assets/instagram_icon.png" alt="Instagram"></a></li>                    
+                        </div>
+                    </ul>
+                </div>
+                        
+
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div id="right-section" class="section">
+        <div class="social-icons">
+            <div id="theme-toggle" class="theme-icon" onclick="toggleTheme()">
+                <span id="icon-bulb" style="display: block;">🌞</span> <!-- Bulb icon (Light Mode) -->
+                <span id="icon-moon" style="display: none;">🌙</span> <!-- Moon icon (Dark Mode) -->
+            </div>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div class="social-icons">
+            <a href="mailto:neilrojan3@gmail.com" target="_blank" class="social-icon"><img src="assets/Gmail_icon.png" alt="Gmail"></a>
+            <br>
+            <a href="https://www.linkedin.com/in/neil-rojan" target="_blank" class="social-icon"><img src="assets/linkedin_icon.png" alt="LinkedIn"></a>
+            <br>
+            <a href="https://www.instagram.com/neilrojan_/" target="_blank" class="social-icon"><img src="assets/instagram_icon.png" alt="Instagram"></a>
+            <br>
+            <a href="https://github.com/NeilRojan" target="_blank" class="social-icon"><img src="assets/github_icon.png" alt="Github"></a>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
